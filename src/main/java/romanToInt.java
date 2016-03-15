@@ -35,11 +35,4 @@ public class romanToInt {
         }
         return count;
     }
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String string = scanner.nextLine();
-        System.out.print("Input : " + string + "\n");
-        int res = romanToInt(string);
-        System.out.print("Output : " + res);
-    }
 }
