@@ -8,18 +8,16 @@ import java.util.Stack;
  */
 public class BinaryTreeLevelOrderTraversalII {
     public ArrayList<ArrayList<Integer>> levelOrderBottom(TreeNode root) {
+        // write your code here
         if(root == null) return new ArrayList<ArrayList<Integer>>(0);
         ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
-        levelOrder(res, root);
-        return res;
-    }
-    public void levelOrder(ArrayList<ArrayList<Integer>> arrayLists, TreeNode treeNode) {
         ArrayList<Integer> arrayList = new ArrayList<Integer>();
         Stack<ArrayList<Integer>> stack = new Stack<ArrayList<Integer>>();
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
-        queue.add(treeNode);
-        int f = 0, r = 1;
+        queue.add(root);
+        int f = 0, r = 0;
         while (!queue.isEmpty()) {
+            arrayList = new ArrayList<Integer>();
             r = queue.size();
             while (f < r) {
                 TreeNode top = queue.poll();
@@ -30,12 +28,13 @@ public class BinaryTreeLevelOrderTraversalII {
             }
             f = 0;
             stack.push(arrayList);
-            arrayList.clear();
         }
-        for (int i = 0; i < stack.size(); i++) {
+
+        while (!stack.isEmpty()) {
             ArrayList<Integer> arrayList1 = stack.pop();
-            arrayLists.add(arrayList1);
+            res.add(arrayList1);
         }
+        return res;
     }
 
 }

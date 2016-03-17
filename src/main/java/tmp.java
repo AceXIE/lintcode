@@ -28,22 +28,17 @@ public class tmp {
             System.out.println(string);
         }
 
+        ArrayList<Integer> arrayList;
+        arrayList= new ArrayList<Integer>();
         ArrayList<ArrayList<Integer> > res = new ArrayList<ArrayList<Integer> >();
-        ArrayList<Integer> arrayList = new ArrayList<Integer>();
         arrayList.add(1);
         arrayList.add(2);
         res.add(arrayList);
         System.out.println(res);
 
-//        arrayList.clear();
+        arrayList= new ArrayList<Integer>();
         arrayList.add(3);
-        System.out.println(arrayList);
         res.add(arrayList);
-//        int id =res.size();
-//        res.add(id,arrayList);
-//        res.add(arrayList);
-//        System.out.println(res.get(0));
-        System.out.println(res.size());
         System.out.print(res);
     }
 }
