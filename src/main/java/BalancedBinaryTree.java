@@ -5,22 +5,19 @@
  */
 public class BalancedBinaryTree {
     public boolean isBalanced(TreeNode root) {
-        Integer depth = new Integer(0);
-        return isB(root, depth);
-    }
-    public boolean isB(TreeNode root, Integer depth) {
-        if (root == null) {
-            depth = 0;
-            return true;
-        }
-        int ld = 0, rd = 0;
-        if ( isB(root.left, ld) && isB(root.right, rd) ) {
-            if (Math.abs(ld - rd) > 1) {
-                return false;
-            }
-            depth = Math.max(ld, rd) + 1;
+        height(root);
+        if(root == null) return true;
+        int l = 0, r = 0;
+        if (root.left != null) l = root.left.val;
+        if (root.right != null) r = root.right.val;
+        if (Math.abs(l - r) <= 1 && isBalanced(root.left) && isBalanced(root.right)) {
             return true;
         }
         return false;
+    }
+    public int height (TreeNode root) {
+        if (root == null) return 0;
+        root.val = Math.max(height(root.right),height(root.left)) + 1;
+        return root.val;
     }
 }
