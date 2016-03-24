@@ -9,7 +9,6 @@ public class IntegertoRoman {
         Scanner scanner = new Scanner(System.in);
         System.out.println(intToRoman(scanner.nextInt()));
     }
-<<<<<<< HEAD
 
     public static String intToRoman(int n) {
         String res = new String();
@@ -26,11 +25,7 @@ public class IntegertoRoman {
             n/=10;
             row++;
         }
-=======
-    public static String intToRoman(int n) {
-        String res = new String();
 
->>>>>>> 1aca4dd51868976d6870fbbc03e75fa0cfbcd75d
         return res;
     }
 
