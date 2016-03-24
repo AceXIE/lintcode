@@ -5,6 +5,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 /**
  * Created by Administrator on 2016/3/19.
+ * 华为实习机试体验1
  */
 public class Main {
     public static void main(String args[]){
