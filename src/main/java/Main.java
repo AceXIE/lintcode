@@ -3,6 +3,7 @@ import java.util.*;
 /**
  * Created by xk on 2016/3/30.
  * 蘑菇街
+ * 使用平台：http://oj.acmcoder.com/ExamNotice.html
  */
 public class Main {
     public static void main(String args[]) {
