@@ -20,4 +20,18 @@ public class FindMinimuminRotatedSortedArray {
         }
         return num[r];
     }
+    public static int findMinUsingBinarySearch(int[] num) {
+        int l = 0, r = num.length - 1;
+        while (l < r && num[l] >= num[r]) {
+            int mid = (l + r) / 2;
+            if (num[mid] < num[l]) {
+                r = mid;
+            } else if (num[mid] == num[l]) {
+                l++;
+            } else {
+                l = mid + 1;
+            }
+        }
+        return num[l];
+    }
 }
