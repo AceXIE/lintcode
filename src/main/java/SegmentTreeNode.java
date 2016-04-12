@@ -7,7 +7,8 @@ public class SegmentTreeNode {
     public SegmentTreeNode(int start, int end) {
         this.start = start;
         this.end = end;
-        this.left = this.right = null;
+        this.left = null;
+        this.right = null;
     }
     public SegmentTreeNode(int start, int end, int max) {
         this.start = start;
