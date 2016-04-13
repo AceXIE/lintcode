@@ -6,14 +6,24 @@ import java.util.*;
 public class GrayCode {
     public static void main(String[] args) {
         int n = 2;
-//        System.out.print()
-        ArrayList<Integer> res = new ArrayList<Integer>();
-        res = grayCode(n);
-        for (int i = 0; i < res.length; i++) {
-            System.out.print(res.);
+        ArrayList<Integer> res = grayCode(n);
+        for (int i = 0; i < res.size(); i++) {
+            System.out.print(res.get(i));
         }
     }
-    public static ArrayList<Integer> grayCode(int n) {
 
+    /***
+     * 格雷码
+     * @param n
+     * @return
+     */
+    public static ArrayList<Integer> grayCode(int n) {
+        int size = 1<<n;
+        ArrayList<Integer> ans = new ArrayList<Integer>(size);
+        for (int i = 0; i < size; i++) {
+            int gcode = i ^ ( i>>1 );
+            ans.add(gcode);
+        }
+        return ans;
     }
 }
