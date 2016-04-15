@@ -6,6 +6,12 @@ public class TrappingRainWater {
         int[] h = {0,1,0,2,1,0,1,3,2,1,2,1};
         System.out.print(trapRainWater(h));
     }
+
+    /***
+     * 确保局部最优的影响
+     * @param heights
+     * @return
+     */
     public static int trapRainWater(int[] heights) {
         if (heights == null || heights.length == 0) {
             return 0;
