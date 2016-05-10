@@ -12,6 +12,14 @@ public class ReverseLinkedListII {
         }
         ListNode res = reverseBetween(root, 2, 4);
     }
+
+    /***
+     * 反转，分为三个部分。
+     * @param head
+     * @param m
+     * @param n
+     * @return
+     */
     public static ListNode reverseBetween(ListNode head, int m, int n) {
         if (m == n) return head;
         ListNode pre = new ListNode(0);
