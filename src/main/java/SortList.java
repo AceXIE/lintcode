@@ -1,5 +1,6 @@
 /**
  * Created by Administrator on 2016/5/13.
+ * O(nlogn) 归并排序
  */
 public class SortList {
     public static void main(String[] args) {
