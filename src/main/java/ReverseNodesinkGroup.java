@@ -50,7 +50,7 @@ public class ReverseNodesinkGroup {
             if (cout == k-1 && cur != null) {
                 end = cur;
                 cur = cur.next;
-                reverseGroup(start, end);
+                reverseGroup(start, end);//!!!!TODO:有问题。。。。在考虑
                 pnewhead.next = start;
                 pnewhead = end;
                 end.next = null;
