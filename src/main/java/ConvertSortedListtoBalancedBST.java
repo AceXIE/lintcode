@@ -11,6 +11,7 @@ public class ConvertSortedListtoBalancedBST {
             p = p.next;
         }
 //        sortedListToBST(root);
+        head = root;
         printTree(sortedListToBST(root));
     }
     static ListNode currentHead = null;
@@ -34,16 +35,17 @@ public class ConvertSortedListtoBalancedBST {
             len++;
             ph = ph.next;
         }
-        return helper(head, 0, len - 1);
+        return helper(0, len - 1);
     }
-    public static TreeNode helper(ListNode head, int start, int end) {
+    static ListNode head = null;
+    public static TreeNode helper(int start, int end) {
         if (start > end) return null;
         int mid = start + (end - start)/2;
-        TreeNode leftTree = helper(head, start, mid - 1);
+        TreeNode leftTree = helper(start, mid - 1);
         TreeNode root = new TreeNode(head.val);
         root.left = leftTree;
         head = head.next;
-        root.right = helper(head, mid + 1, end);
+        root.right = helper(mid + 1, end);
         return root;
     }
     public static void printTree(TreeNode root) {
