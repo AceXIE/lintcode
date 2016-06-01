@@ -11,18 +11,18 @@ public class MoveZeroes {
     }
     public static void moveZeroes(int[] nums) {
         if (nums == null) return;
-        if (nums.length == 0) return;
-        int start = 0, end = nums.length - 1;
-        while (start <= end) {
-            if (nums[start] == 0) {
+        if (nums.length < 2) return;
+        int start = 0, end = 1;
+        while (end < nums.length) {
+            while (nums[start] == 0) {
+                int tmp = nums[start];
                 nums[start] = nums[end];
-                nums[end] = 0;
-                while (nums[end] == 0) {
-                    end--;
-                    if (start>end) return;
-                }
-                start++;
+                nums[end] = tmp;
+                end++;
+                if (end >= nums.length) return;
             }
+            start++;
+            end = start+1;
         }
     }
 }
