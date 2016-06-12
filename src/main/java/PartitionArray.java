@@ -23,7 +23,7 @@ public class PartitionArray {
                 pa++;pb--;
             }
         }
-        int res = len;
+        int res = len;//如果都小于k的话，需要返回长度
         for (int i = 0; i < len; i++) {
             if (nums[i] >= k) {
                 res = i;
