@@ -7,6 +7,11 @@
     <groupId>zju</groupId>
     <artifactId>lint</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <dependencies>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
