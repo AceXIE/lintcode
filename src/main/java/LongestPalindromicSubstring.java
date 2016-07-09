@@ -6,6 +6,7 @@ public class LongestPalindromicSubstring {
         String s = "abcdzdcab";
         System.out.print(longestPalindrome(s));
     }
+    //DP动态规划问题
     public static String longestPalindrome(String s) {
         if (s == null || s.length() == 0) return "";
         boolean[][] dp = new boolean[s.length()][s.length()];
