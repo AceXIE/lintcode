@@ -9,7 +9,7 @@ public class strStr {
         System.out.print(strStr(source,target));
     }
     public static int strStr(String source, String target) {
-        if (target == null) return source==null?0:-1;
+        if (target == null) return -1;
         if (source == null) return -1;
         int len = source.length();
         int lenTarget = target.length();
