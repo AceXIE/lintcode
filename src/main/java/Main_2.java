@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 /**
  * Created by Administrator on 2016/7/14.
+ * 涉及到将字符串进行分割
  */
 public class Main_2 {
     public static void main(String[] args) {

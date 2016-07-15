@@ -2,6 +2,7 @@ import java.util.*;
 
 /**
  * Created by Administrator on 2016/7/14.
+ * 将给出的一组数据排序后输出，要求连续的数，只输出头和尾
  */
 public class Main_3 {
     public static void main(String[] args) {
@@ -13,11 +14,9 @@ public class Main_3 {
             num[i] = Integer.parseInt(numS[i]);
         }
         Arrays.sort(num);
-        StringBuffer stringBuffer = new StringBuffer();
+//        StringBuffer stringBuffer = new StringBuffer();
         Stack<Integer> stack = new Stack<Integer>();
-        int last = -2, cur = -2, next = -2;
-        int start = -2, end = -2;
-        boolean bb = false;
+        int last,cur;
         last = num[0];
         stack.add(last);
         int hold = num[0];
