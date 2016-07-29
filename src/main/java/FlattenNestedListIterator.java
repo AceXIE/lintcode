@@ -34,7 +34,7 @@ public class FlattenNestedListIterator implements Iterator<Integer> {
 }
 
 interface NestedInteger {
-    public boolean isInteger();
-    public Integer getInteger();
-    public List<NestedInteger> getList();
+    boolean isInteger();
+    Integer getInteger();
+    List<NestedInteger> getList();
 }
