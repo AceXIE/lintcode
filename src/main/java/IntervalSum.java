@@ -14,7 +14,52 @@ public class IntervalSum {
 //        ArrayList<Long> longArrayList = intervalSum(A, queries);
 //        System.out.print(longArrayList);
 //    }
-//    public static ArrayList<Long> intervalSum(int[] A, ArrayList<Interval> queries) {
-//
-//    }
+    public ArrayList<Long> intervalSum(int[] A, ArrayList<Interval> queries) {
+        if (A == null) return null;
+        ArrayList<Long> arrayList = new ArrayList<>();
+        SegmentSumTreeNode root = buildSegmentTree(A, 0, A.length - 1);
+        for (Interval interval : queries) {
+            arrayList.add(querySegment(root, interval.start, interval.end));
+        }
+        return arrayList;
+    }
+    public Long querySegment(SegmentSumTreeNode root, int start, int end) {
+        if (start > end || start > root.end || end < root.start) {
+            return (long)0;
+        }
+        if (start <= root.start && end >= root.end) {
+            return root.sum;
+        }
+        int mid = (root.start + root.end)/2;
+        long leftSum = querySegment(root.left, start, Math.min(end,mid));
+        long rightSum = querySegment(root.right, Math.max(mid, start), end);
+        return leftSum+rightSum;
+    }
+    public SegmentSumTreeNode buildSegmentTree(int[] A, int start, int end) {
+        if (start == end) {
+            return new SegmentSumTreeNode(start, end, A[start]);
+        }
+        SegmentSumTreeNode root = new SegmentSumTreeNode(start, end, 0);
+        if (start != end) {
+            int mid = (start + end) /2;
+            root.left = buildSegmentTree(A, start, mid);
+            root.right = buildSegmentTree(A, mid + 1, end);
+        }
+        root.sum = root.left.sum + root.right.sum;
+        return root;
+    }
+}
+class SegmentSumTreeNode {
+    int start;
+    int end;
+    long sum;
+    SegmentSumTreeNode left, right;
+
+    public SegmentSumTreeNode(int start, int end, long sum) {
+        this.start = start;
+        this.end = end;
+        this.sum = sum;
+        this.left = null;
+        this.right = null;
+    }
 }
