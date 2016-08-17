@@ -36,7 +36,7 @@ public class WordSearch {
                 {1, 0},
                 {0, 1},
                 {0, -1}};
-        for (int k = 0; k < dir[0].length; k++) {
+        for (int k = 0; k < dir.length; k++) {
             int ii = i + dir[k][0];
             int jj = j + dir[k][1];
             if (ii >= 0 && ii < board.length && jj >= 0 && jj < board[0].length
