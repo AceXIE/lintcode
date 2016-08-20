@@ -18,17 +18,23 @@ public class WordBreak {
         if (dict == null) return false;
         if (s == null) return false;
         int len = s.length();
+        int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
+        for (String ss : dict) {
+            min = Math.min(min, ss.length());
+            max = Math.max(max, ss.length());
+        }
         boolean[] dp = new boolean[len + 1];
         Arrays.fill(dp, false);
         dp[0] = true;
         for (int i = 0; i < len; i++) {
             if (dp[i] == true) {
-                for (int j = i + 1; j <= len; j++) {
-                    if (dict.contains(s.substring(i,j))) {
-                        dp[j] = true;
+                for (int j = min; i + j <= len && j <= max; j++) {
+                    if (dict.contains(s.substring(i,i + j))) {
+                        dp[i + j] = true;
                     }
                 }
             }
+            if (dp[len] == true) return true;
         }
         return dp[len];
     }
